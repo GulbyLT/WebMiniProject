@@ -1,2 +1,5 @@
-body{background-color: rgb(190, 233, 190)}
-span{text-align:start; font-family:fantasy; font-size:60px;}
+body{background-color: rgb(236, 247, 236)}
+span{text-align:start; font-family:fantasy; font-size:60px; color:white; -webkit-text-stroke-width: 2px; -webkit-text-stroke-color: black;}
+p{background-color:rgb(167, 236, 167);}
+p.undermain{font-family:fantasy}
+li{ -webkit-text-stroke-color:black; -webkit-text-stroke-width:1px; color:white;font-family:fantasy; background-color:rgb(3, 175, 3); border:3px; border-style:solid; border-color:black; padding:7px; }
