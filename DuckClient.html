@@ -8,15 +8,27 @@
             <span> Danish Duck Database</span>
             <b class="beta"> (BETA)</b>
             <p class=undermain>Welcome to the DDD! This website is currently in development.</p>
+            <!--Page header-->
             <ul id="buttons">
-                <li><a href="#">Duck of the Day</a></li>
+                <li><a href="#">Browse DataBase</a></li>
                 <li><a href="https://en.wikipedia.org/wiki/Mallard">Random Cool Duck</a></li>
-                <li><a href="#">About the website</a></li>
+                <!--Buttons WIP. The Random Duck should be switched to 'example duck' and pull info from Wiki w/ Ajax-->
             </ul>
             </p>
+            <h1 class=duckSpecies>Species:</h1>
+            <h1 class=duckGenus>Genus:</h1>
+            <h1 class=duckFamily>Family:</h1>
+            <h1 class=duckPhotoText>Picture:</h1>
         </body>
+
         <script>
             $('ul').hide().fadeIn(2000);
+
         </script>
+        <!--script for button fade in, JQuery minimum lol-->
+        <svg class=frame width="1000" height="1800">
+            <rect class=frame x="10" y="70" width="900" height="700"></rect>
+            <!--The frame of the main feature, the one to contain and display all the information-->
+          </svg>
     </head>
 </html>

@@ -5,3 +5,9 @@ p.undermain{font-family:fantasy}
 #buttons li{float:left; list-style: none; text-align: center; background-color:black; margin-right:30px; width: 150px; line-height: 60px}
 #buttons li a{text-decoration:none; color: #FFFFFF; display:block;}
 #buttons li a:hover{text-decoration: none; color:black; background-color: #6ce068;}
+h1.duckSpecies{position:absolute; left:100px; top:300px; font-family:fantasy;}
+h1.duckGenus{position:absolute; left:100px; top:350px; font-family:fantasy;}
+svg.frame{position:absolute; left: 20px; top: 200px;}
+rect.frame{fill:rgb(167, 236, 167);stroke:rgb(46, 197, 32);stroke-width:5;fill-opacity:0.1;stroke-opacity:0.9;}
+h1.duckFamily{position:absolute; left:100px; top:400px; font-family:fantasy;}
+h1.duckPhotoText{position:absolute; left:100px; top:450px; font-family:fantasy;}
