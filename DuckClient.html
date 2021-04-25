@@ -10,8 +10,8 @@
             <p class=undermain>Welcome to the DDD! This website is currently in development.</p>
             <!--Page header-->
             <ul id="buttons">
-                <li><a href="#">Browse DataBase</a></li>
-                <li><a href="https://en.wikipedia.org/wiki/Mallard">Random Cool Duck</a></li>
+                <li class=Browse><a href="#">Browse DataBase</a></li>
+                <li class=Example><a href="#">ExampleDuck</a></li>
                 <!--Buttons WIP. The Random Duck should be switched to 'example duck' and pull info from Wiki w/ Ajax-->
             </ul>
             </p>
@@ -20,12 +20,19 @@
             <h1 class=duckFamily>Family:</h1>
             <h1 class=duckPhotoText>Picture:</h1>
         </body>
-
+<!--The script below is a placeholder for Ajax, just to ensure buttons are click-able-->
         <script>
             $('ul').hide().fadeIn(2000);
+            $('ul .Example').on('click', function(){
+                $(this).ajax({
+                    url: WebMiniProject/ducko.jpg
+
+                })
+            })
 
         </script>
-        <!--script for button fade in, JQuery minimum lol-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        
         <svg class=frame width="1000" height="1800">
             <rect class=frame x="10" y="70" width="900" height="700"></rect>
             <!--The frame of the main feature, the one to contain and display all the information-->
