@@ -6,8 +6,8 @@ This project requires Xampp or a similar setup to run
     2. start the apache server and the database
     3. open up the database control panel and import the file duckdatabase.sql
     4. open up your browser and open the links:
-      4.1: http://localhost//webdev/WebMiniProject/DuckServer.php
-      4.2: http://localhost//webdev/WebMiniProject/DuckClient.html#
+      4.1: http://localhost//WebMiniProject/DuckServer.php
+      4.2: http://localhost//WebMiniProject/DuckClient.html#
 
 Sources:
 
