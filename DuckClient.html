@@ -7,9 +7,22 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script>
         $(document).ready(function() {
-            $("#btn").click(function() {
-                //document.getElementById("test1").innerHTML = "runs";
-                var duck = "A. albifrons"
+            //document.getElementById("test2").innerHTML = "runs";
+            $("input").keyup(function() {
+
+                var duckname = $("input").val();
+                $.post("DuckServer.php", {
+                        ducksearch: duckname
+                    },
+                    function(data) {
+                        $("#tablefield").html(data);
+                    }
+                );
+            });
+            $(document).on("click", ".button", function(event) {
+                event.preventDefault();
+                var duck = jQuery(this).text();
+                //document.getElementById("test2").innerHTML = duck;
                 $.post("DuckServer.php", {
                     selectedduck: duck
                 }, function(data) {
@@ -25,18 +38,28 @@
             <b class="beta"> (BETA)</b>
             <p class=undermain>Welcome to the DDD! This website is currently in development.</p>
             <!--Page header-->
-            <ul id="buttons">
-                <li id="btn" class=Browse><a href="#">Browse DataBase</a></li>
-                <li class=Example><a href="#">ExampleDuck</a></li>
-                <!--Buttons WIP. The Random Duck should be switched to 'example duck' and pull info from Wiki w/ Ajax-->
-            </ul>
+            <input type="text" name="name">
+
         </p>
-        <div id="test1">
-            <h1 id="duckspecies" class=duckSpecies>Species:</h1>
-            <h1 id="duckgenus" class=duckGenus>Genus:</h1>
-            <h1 class=duckFamily>Family:</h1>
-            <h1 class=duckPhotoText>Picture:</h1>
-        </div>
+        <section style="display: block;">
+            <div id="tablefield" style="background-color: rgb(167, 236, 167);width: 10%; height: 10;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;border: 1px;border-style: solid;padding: 0px;border-collapse: collapse;margin: 5px;
+            top: 1%;
+            left: 1%;
+            right: 1%;">
+            </div>
+            <br>
+            <br>
+            <div id="test1">
+                <h1 id="duckspecies" class=duckSpecies>Species:</h1>
+                <h1 id="duckgenus" class=duckGenus>Genus:</h1>
+                <h1 class=duckFamily>Family:</h1>
+                <h1 class=duckPhotoText>Picture:</h1>
+            </div>
+            <svg class=frame width="1000" height="1800">
+                <rect class=frame x="10" y="130" width="900" height="700"></rect>
+                <!--The frame of the main feature, the one to contain and display all the information-->
+            </svg>
+        </section>
     </body>
     <!--The script below is a placeholder for Ajax, just to ensure buttons are click-able-->
     <script>
@@ -47,10 +70,7 @@
     </script>
 
 
-    <svg class=frame width="1000" height="1800">
-            <rect class=frame x="10" y="70" width="900" height="700"></rect>
-            <!--The frame of the main feature, the one to contain and display all the information-->
-          </svg>
+
 </head>
 
 </html>

@@ -8,6 +8,7 @@ $entrspecies = "temp";
 $entrygenus = "temp";
 $entryfamily = "temp";
 $entrypicture = "temp";
+$ducknamearray = array();
 //$entrydiscription = "temp";
 
 $texttosendback = "none";
@@ -19,6 +20,7 @@ if ($conn->connect_error) {
 }
 
 function readFromDB() {
+    global $ducknamearray;
     global $tablename;
     global $conn;
     $sql = "SELECT * FROM  $tablename";
@@ -26,19 +28,23 @@ function readFromDB() {
     if (mysqli_num_rows($result) > 0) {
         // output data of each row
         while($row = mysqli_fetch_assoc($result)) {
-            echo "<p>";
-            echo $row['Species']; 
-            echo "<br>";
-            echo $row['Genus'];
-            echo "<br>";
-            echo $row['Family'];
-            echo "</p>";
+           array_push($ducknamearray,$row['Species']);
         }
     } else {
         echo "0 results";
     }
 }
 
+function createTable(){
+    global $ducknamearray;
+    global $duckname;
+    foreach($ducknamearray as $dname){
+        if(strpos($dname,$duckname) !== false){
+            echo '<button type="button" class=button style="border: 1px;border-style: solid;border-collapse: collapse;margin: 0px;padding: 0px;">'.$dname.'</button>';
+            //echo "<br>";
+        }
+    }
+}
 
 function getDBEntryFromName($name){
     global $tablename;
@@ -66,6 +72,13 @@ function updateDisplay(){
    ';
     
 }
+
+if(isset($_POST['ducksearch'])){
+    $duckname = $_POST['ducksearch'];
+    readFromDB();
+    createTable();
+}
+
 if (isset($_POST['selectedduck'])){
     $selectedentryname = $_POST['selectedduck'];
     getDBEntryFromName($selectedentryname);
