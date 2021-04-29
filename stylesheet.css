@@ -6,7 +6,6 @@ body {
     position: relative;
     z-index: 1;
     background-color: #4CAF50;
-    /* Green */
     border: 1px solid green;
     color: white;
     padding: 15px 32px;

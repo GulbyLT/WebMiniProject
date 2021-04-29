@@ -6,28 +6,36 @@
     <script src="jquery-3.6.0.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script>
-        $(document).ready(function() {
-            //document.getElementById("test2").innerHTML = "runs";
-            $("input").keyup(function() {
+        //Script that handles the Logic for listening for various inputs and handeling Ajax commuication with the php server
 
+        //prevent code from running before the page has loaded and is ready to execute code
+        $(document).ready(function() {
+            //detect keyup event on the input search bar 
+            $("input").keyup(function() {
+                //assign value from teh input search bar to a variable
                 var duckname = $("input").val();
+                //use Ajax to post the duckname to the server
                 $.post("DuckServer.php", {
                         ducksearch: duckname
                     },
+                    //recieve data from the server
                     function(data) {
                         $("#tablefield").html(data);
                     }
                 );
             });
+            //listen for button clicks 
             $(document).on("click", ".button", function(event) {
-                event.preventDefault();
+                //get the text contained in the button
                 var duck = jQuery(this).text();
-                //document.getElementById("test2").innerHTML = duck;
+                //use Ajax to post the variable duck to the server
                 $.post("DuckServer.php", {
-                    selectedduck: duck
-                }, function(data) {
-                    $("#test1").html(data);
-                });
+                        selectedduck: duck
+                    },
+                    //recieve data from the server 
+                    function(data) {
+                        $("#test1").html(data);
+                    });
             });
         });
     </script>
@@ -38,15 +46,17 @@
             <b class="beta"> (BETA)</b>
             <p class=undermain>Welcome to the DDD! This website is currently in development.</p>
             <!--Page header-->
+            Search for a Duck:
             <input type="text" name="name">
-
+            <!--Search Bar-->
         </p>
         <section style="display: block;">
-            <div id="tablefield" style="background-color: rgb(167, 236, 167);width: 10%; height: 10;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;border: 1px;border-style: solid;padding: 0px;border-collapse: collapse;margin: 5px;
+            <div id="tablefield" style="width: 1%; height: 10;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;margin: 5px;
             top: 1%;
             left: 1%;
             right: 1%;">
             </div>
+            <!--div that contains the buttons that appear with search results-->
             <br>
             <br>
             <div id="test1">
@@ -62,15 +72,6 @@
         </section>
     </body>
     <!--The script below is a placeholder for Ajax, just to ensure buttons are click-able-->
-    <script>
-        $('ul').hide().fadeIn(2000);
-        $('ul .Example').on('click', function() {
-            //ajaxTest("duck");
-        })
-    </script>
-
-
-
 </head>
 
 </html>
