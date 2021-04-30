@@ -12,8 +12,6 @@ This project requires Xampp or a similar setup to run
   IF THE PHP FILE PRODUCES A PASSWORD-RELATED ERROR IN THE BROSWER, PLEASE PASTE THE FOLLOWING CODE INTO THE DUCKDATABSE SQL CONSOLE:
       ```GRANT ALL PRIVILEGES ON *.* TO `User`@`%` IDENTIFIED BY PASSWORD '*196BDEDE2AE4F84CA44C47D54D78478C7E2BD7B7' WITH GRANT OPTION;```
 
-Sources:
-
 Image sources:
 https://en.wikipedia.org/wiki/Greater_white-fronted_goose
 https://en.wikipedia.org/wiki/Anser_(bird)
